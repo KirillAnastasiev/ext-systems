@@ -1,6 +1,5 @@
 target
 out
 .idea/
-city-register.iml
-register-office.iml
+*.iml
 token.txt
