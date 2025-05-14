@@ -10,10 +10,11 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "sex", discriminatorType = DiscriminatorType.INTEGER)
 @NamedQueries({
-        @NamedQuery(name = "Person.findPersons", query = "SELECT p FROM Person AS p " +
-                                                                  "LEFT JOIN FETCH p.passports AS ps " +
-                                                                  "LEFT JOIN FETCH p.birthCertificate AS bs " +
-                                                                  "WHERE p.personId = :personId")
+        @NamedQuery(name = "Person.findPersons",
+                query = "SELECT p FROM Person AS p " +
+                                 "LEFT JOIN FETCH p.passports AS ps " +
+                                 "LEFT JOIN FETCH p.birthCertificate AS bs " +
+                        "WHERE p.personId = :personId")
 })
 public class Person {
     @Id

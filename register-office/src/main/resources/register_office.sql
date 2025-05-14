@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS ro_marriage_certificate (
     date_issue                  DATE             NOT NULL,
     husband_id                  INTEGER          NOT NULL           REFERENCES ro_person(person_id) ON DELETE RESTRICT,
     wife_id                     INTEGER          NOT NULL           REFERENCES ro_person(person_id) ON DELETE RESTRICT,
-    active                      BOOLEAN          DEFAULT false,
+    active                      BOOLEAN          DEFAULT FALSE,
     end_date                    DATE
 );
 
@@ -58,3 +58,8 @@ INSERT INTO ro_birth_certificate
     (number_certificate, date_issue, person_id, father_id, mother_id)
 VALUES
     ('123 Birth', '2019-1-01', 3, 2, 1);
+
+INSERT INTO ro_marriage_certificate
+    (number_certificate, date_issue, husband_id, wife_id, active)
+VALUES
+    ('12345', '2018-3-13', 2, 1, TRUE);
