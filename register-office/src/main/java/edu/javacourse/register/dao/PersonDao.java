@@ -1,17 +1,15 @@
 package edu.javacourse.register.dao;
 
 import edu.javacourse.register.domain.Person;
-import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.*;
 
 import java.util.List;
 
 public class PersonDao {
+    @PersistenceContext
     private EntityManager entityManager;
-
-    public PersonDao() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistence");
-        entityManager = factory.createEntityManager();
-    }
 
     public List<Person> findPersons() {
         TypedQuery<Person> query = entityManager.createNamedQuery("Person.findPersons", Person.class);
