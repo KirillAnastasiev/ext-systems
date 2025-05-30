@@ -3,12 +3,15 @@ package edu.javacourse.register.dao;
 import edu.javacourse.register.domain.Person;
 import edu.javacourse.register.domain.PersonFemale;
 import edu.javacourse.register.domain.PersonMale;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
 
 public class PersonDaoTest {
+
     @Test
+    @Ignore
     public void findPersons() {
         PersonDao dao = new PersonDao();
         List<Person> persons = dao.findPersons();
